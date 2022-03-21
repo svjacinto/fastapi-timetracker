@@ -1,0 +1,17 @@
+# API server
+fastapi
+uvicorn[standard]
+pydantic[email]
+
+# Database
+motor
+dnspython
+
+# Development
+black
+flake8
+
+# Auth
+itsdangerous
+Authlib
+httpx
