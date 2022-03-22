@@ -2,7 +2,7 @@ from fastapi import APIRouter, Body, HTTPException, Request, status
 from fastapi.encoders import jsonable_encoder
 from fastapi.responses import JSONResponse
 
-from .models import EmployeeModel, UpdateEmployeeModel
+from models import EmployeeModel, UpdateEmployeeModel
 
 router = APIRouter()
 

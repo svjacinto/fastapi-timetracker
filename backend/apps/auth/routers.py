@@ -2,7 +2,6 @@ from fastapi import APIRouter
 from fastapi.encoders import jsonable_encoder
 import uuid
 
-import json
 from starlette.config import Config
 from starlette.requests import Request
 from starlette.responses import HTMLResponse, RedirectResponse
@@ -10,6 +9,7 @@ from authlib.integrations.starlette_client import OAuth, OAuthError
 
 router = APIRouter()
 
+# Initialize our OAuth instance from the client ID and client secret specified in our .env file
 config = Config('.env')
 oauth = OAuth(config)
 
@@ -29,7 +29,7 @@ async def login(request: Request):
     return await oauth.google.authorize_redirect(request, redirect_uri)
 
 # Handle authentication callback
-@router.get('/auth')
+@router.get('/')
 async def auth(request: Request):
     try:
         token = await oauth.google.authorize_access_token(request)
