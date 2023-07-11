@@ -1,2 +1,2 @@
-# olympus-prototype
+# timetracker-prototype
 Backend using FastAPI
